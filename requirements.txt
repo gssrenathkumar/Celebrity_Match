@@ -7,4 +7,6 @@ tqdm
 scikit-learn
 streamlit
 bing-image-downloader
+ensure
+box
 -e.
