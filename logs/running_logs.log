@@ -91,3 +91,180 @@ zipfile.BadZipFile: File is not a zip file
 [2024-01-02 00:15:39,681 : INFO: main: >>>>>> stage Data Ingestion stage completed <<<<<<<<
 
 x===========x]
+[2024-01-02 22:18:04,079 : INFO: main: >>>> stage Data Ingestion stage started <<<<<]
+[2024-01-02 22:18:04,080 : INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-01-02 22:18:04,081 : INFO: common: yaml file: params.yaml loaded successfully]
+[2024-01-02 22:18:04,081 : INFO: common: Created directory at: artifacts]
+[2024-01-02 22:18:04,081 : INFO: common: Created directory at: artifacts/data_ingestion]
+[2024-01-02 22:18:04,699 : INFO: data_ingestion: artifacts/data_ingestion/data.zip download! with following info: 
+Server: GitHub.com
+Date: Tue, 02 Jan 2024 16:48:04 GMT
+Content-Type: text/html; charset=utf-8
+Vary: X-PJAX, X-PJAX-Container, Turbo-Visit, Turbo-Frame, Accept-Encoding, Accept, X-Requested-With
+ETag: W/"cf6ce6db24f74bbcd1f680e053ea6163"
+Cache-Control: max-age=0, private, must-revalidate
+Strict-Transport-Security: max-age=31536000; includeSubdomains; preload
+X-Frame-Options: deny
+X-Content-Type-Options: nosniff
+X-XSS-Protection: 0
+Referrer-Policy: no-referrer-when-downgrade
+Content-Security-Policy: default-src 'none'; base-uri 'self'; child-src github.com/assets-cdn/worker/ gist.github.com/assets-cdn/worker/; connect-src 'self' uploads.github.com www.githubstatus.com collector.github.com raw.githubusercontent.com api.github.com github-cloud.s3.amazonaws.com github-production-repository-file-5c1aeb.s3.amazonaws.com github-production-upload-manifest-file-7fdce7.s3.amazonaws.com github-production-user-asset-6210df.s3.amazonaws.com cdn.optimizely.com logx.optimizely.com/v1/events api.githubcopilot.com objects-origin.githubusercontent.com *.actions.githubusercontent.com wss://*.actions.githubusercontent.com productionresultssa0.blob.core.windows.net/ productionresultssa1.blob.core.windows.net/ productionresultssa2.blob.core.windows.net/ productionresultssa3.blob.core.windows.net/ productionresultssa4.blob.core.windows.net/ productionresultssa5.blob.core.windows.net/ productionresultssa6.blob.core.windows.net/ productionresultssa7.blob.core.windows.net/ productionresultssa8.blob.core.windows.net/ productionresultssa9.blob.core.windows.net/ github-production-repository-image-32fea6.s3.amazonaws.com github-production-release-asset-2e65be.s3.amazonaws.com insights.github.com wss://alive.github.com; font-src github.githubassets.com; form-action 'self' github.com gist.github.com objects-origin.githubusercontent.com; frame-ancestors 'none'; frame-src viewscreen.githubusercontent.com notebooks.githubusercontent.com support.github.com; img-src 'self' data: github.githubassets.com media.githubusercontent.com camo.githubusercontent.com identicons.github.com avatars.githubusercontent.com github-cloud.s3.amazonaws.com objects.githubusercontent.com secured-user-images.githubusercontent.com/ user-images.githubusercontent.com/ private-user-images.githubusercontent.com opengraph.githubassets.com github-production-user-asset-6210df.s3.amazonaws.com customer-stories-feed.github.com spotlights-feed.github.com objects-origin.githubusercontent.com *.githubusercontent.com; manifest-src 'self'; media-src github.com user-images.githubusercontent.com/ secured-user-images.githubusercontent.com/ private-user-images.githubusercontent.com github-production-user-asset-6210df.s3.amazonaws.com gist.github.com; script-src github.githubassets.com; style-src 'unsafe-inline' github.githubassets.com; upgrade-insecure-requests; worker-src github.com/assets-cdn/worker/ gist.github.com/assets-cdn/worker/
+Set-Cookie: _gh_sess=U%2BFdrL7jd4%2F3oHMNkCpoCq81QSghHUqvo60RUOtYfPRmvH33Qy1dTzEcwmPvGDYbag%2Fb88FYAL58YM%2Fu4V6OPkqEYZ6iJcnm8rOLXiT03vGkJtki55BrtAgzodA77I8qf%2FGzGXhSewWujRVhFY7neQhKBZMiEvUYKV0HHgdHjZf1YbYSxpE%2B64VUKfBDKPdqWYItzR2IfQjl73jGTt0uYG0VpTpaPuuYC0XpdunUW9df9O06sz2aAO0z2zIvJvr3kRa2bQyEcjsjPs4k59XZSg%3D%3D--ux%2ByAYpSzJyMiAtJ--jLBx3t6Zud52k4PLu3dUCw%3D%3D; Path=/; HttpOnly; Secure; SameSite=Lax
+Set-Cookie: _octo=GH1.1.1719600110.1704214083; Path=/; Domain=github.com; Expires=Thu, 02 Jan 2025 16:48:03 GMT; Secure; SameSite=Lax
+Set-Cookie: logged_in=no; Path=/; Domain=github.com; Expires=Thu, 02 Jan 2025 16:48:03 GMT; HttpOnly; Secure; SameSite=Lax
+Accept-Ranges: bytes
+Transfer-Encoding: chunked
+X-GitHub-Request-Id: F9B1:1C9768:109B06D:125CC1D:65943E43
+connection: close
+
+]
+[2024-01-02 22:18:04,702 : ERROR: main: File is not a zip file]
+Traceback (most recent call last):
+  File "C:\Users\srena\Downloads\Live\celebrity_match\main.py", line 9, in <module>
+    data_ingestion.main()
+  File "C:\Users\srena\Downloads\Live\celebrity_match\src\celebrity_match\pipeline\stage_01_data_ingestion.py", line 13, in main
+    data_ingestion.extract_zip_file()
+  File "C:\Users\srena\Downloads\Live\celebrity_match\src\celebrity_match\components\data_ingestion.py", line 32, in extract_zip_file
+    with zipfile.ZipFile(self.config.local_data_file, 'r') as zip_ref:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\srena\AppData\Local\Programs\Python\Python312\Lib\zipfile\__init__.py", line 1339, in __init__
+    self._RealGetContents()
+  File "C:\Users\srena\AppData\Local\Programs\Python\Python312\Lib\zipfile\__init__.py", line 1406, in _RealGetContents
+    raise BadZipFile("File is not a zip file")
+zipfile.BadZipFile: File is not a zip file
+[2024-01-02 22:19:01,349 : INFO: main: >>>> stage Data Ingestion stage started <<<<<]
+[2024-01-02 22:19:01,350 : INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-01-02 22:19:01,350 : INFO: common: yaml file: params.yaml loaded successfully]
+[2024-01-02 22:19:01,351 : INFO: common: Created directory at: artifacts]
+[2024-01-02 22:19:01,351 : INFO: common: Created directory at: artifacts/data_ingestion]
+[2024-01-02 22:19:02,557 : INFO: data_ingestion: artifacts/data_ingestion/data.zip download! with following info: 
+Date: Tue, 02 Jan 2024 16:49:02 GMT
+Content-Type: text/html; charset=utf-8
+Content-Length: 41753
+Connection: close
+cache-control: max-age=0, private, must-revalidate
+content-security-policy: base-uri 'self'; child-src https://www.google.com/recaptcha/ https://www.recaptcha.net/ https://www.googletagmanager.com/ns.html https://*.zuora.com/apps/PublicHostedPageLite.do https://gitlab.com/admin/ https://gitlab.com/assets/ https://gitlab.com/-/speedscope/index.html https://gitlab.com/-/sandbox/ https://gitlab.com/assets/ blob: data:; connect-src 'self' https://gitlab.com wss://gitlab.com https://sentry.gitlab.net https://new-sentry.gitlab.net https://customers.gitlab.com https://snowplow.trx.gitlab.net https://sourcegraph.com https://collector.prd-278964.gl-product-analytics.com snowplow.trx.gitlab.net https://sourcegraph.com/.api/; default-src 'self'; font-src 'self'; form-action 'self' https: http:; frame-ancestors 'self'; frame-src https://www.google.com/recaptcha/ https://www.recaptcha.net/ https://www.googletagmanager.com/ns.html https://*.zuora.com/apps/PublicHostedPageLite.do https://gitlab.com/admin/ https://gitlab.com/assets/ https://gitlab.com/-/speedscope/index.html https://gitlab.com/-/sandbox/; img-src 'self' data: blob: http: https:; manifest-src 'self'; media-src 'self' data: blob: http: https:; object-src 'none'; report-uri https://new-sentry.gitlab.net/api/4/security/?sentry_key=f5573e26de8f4293b285e556c35dfd6e&sentry_environment=gprd; script-src 'strict-dynamic' 'self' 'unsafe-inline' 'unsafe-eval' https://www.google.com/recaptcha/ https://www.gstatic.com/recaptcha/ https://www.recaptcha.net/ https://apis.google.com https://*.zuora.com/apps/PublicHostedPageLite.do 'nonce-A+Wg5e/TKgIq85KPYeiLHw=='; style-src 'self' 'unsafe-inline'; worker-src https://gitlab.com/assets/ blob: data:
+etag: W/"70681c157118902001435cabb0fe6ac7"
+permissions-policy: interest-cohort=()
+referrer-policy: strict-origin-when-cross-origin
+set-cookie: _gitlab_session=6be20af220e567bf05987551e1d0fcf9; path=/; expires=Tue, 02 Jan 2024 18:49:01 GMT; secure; HttpOnly; SameSite=None
+x-content-type-options: nosniff
+x-download-options: noopen
+x-frame-options: SAMEORIGIN
+x-gitlab-meta: {"correlation_id":"01HK5H86D4M4J8BH96638WK129","version":"1"}
+x-permitted-cross-domain-policies: none
+x-request-id: 01HK5H86D4M4J8BH96638WK129
+x-runtime: 0.441835
+x-ua-compatible: IE=edge
+x-xss-protection: 1; mode=block
+gitlab-lb: haproxy-main-26-lb-gprd
+gitlab-sv: web-gke-us-east1-d
+CF-Cache-Status: MISS
+Accept-Ranges: bytes
+Report-To: {"endpoints":[{"url":"https:\/\/a.nel.cloudflare.com\/report\/v3?s=xm%2BfiqOcB0HAX6D4%2FQHYj5cT79XFUiDP70cHJVJ655yr1u%2FUt%2F9sLwewDxX8SFN%2F1xRdHt487Eb72wF317NCVwQwGdyNHCFGxq0BzJKzchPHxx4bfABKpL663ow%3D"}],"group":"cf-nel","max_age":604800}
+NEL: {"success_fraction":0.01,"report_to":"cf-nel","max_age":604800}
+Vary: Accept-Encoding
+Strict-Transport-Security: max-age=31536000
+Set-Cookie: _cfuvid=ki2CZciPuhxqaHqLatCJ0mYuWIacl_7E3OzAtlPztus-1704214142046-0-604800000; path=/; domain=.gitlab.com; HttpOnly; Secure; SameSite=None
+Server: cloudflare
+CF-RAY: 83f47e2e6940f2a6-BOM
+
+]
+[2024-01-02 22:19:02,559 : ERROR: main: File is not a zip file]
+Traceback (most recent call last):
+  File "C:\Users\srena\Downloads\Live\celebrity_match\main.py", line 9, in <module>
+    data_ingestion.main()
+  File "C:\Users\srena\Downloads\Live\celebrity_match\src\celebrity_match\pipeline\stage_01_data_ingestion.py", line 13, in main
+    data_ingestion.extract_zip_file()
+  File "C:\Users\srena\Downloads\Live\celebrity_match\src\celebrity_match\components\data_ingestion.py", line 32, in extract_zip_file
+    with zipfile.ZipFile(self.config.local_data_file, 'r') as zip_ref:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\srena\AppData\Local\Programs\Python\Python312\Lib\zipfile\__init__.py", line 1339, in __init__
+    self._RealGetContents()
+  File "C:\Users\srena\AppData\Local\Programs\Python\Python312\Lib\zipfile\__init__.py", line 1406, in _RealGetContents
+    raise BadZipFile("File is not a zip file")
+zipfile.BadZipFile: File is not a zip file
+[2024-01-02 22:20:11,673 : INFO: main: >>>> stage Data Ingestion stage started <<<<<]
+[2024-01-02 22:20:11,674 : INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-01-02 22:20:11,675 : INFO: common: yaml file: params.yaml loaded successfully]
+[2024-01-02 22:20:11,675 : INFO: common: Created directory at: artifacts]
+[2024-01-02 22:20:11,675 : INFO: common: Created directory at: artifacts/data_ingestion]
+[2024-01-02 22:20:16,213 : INFO: data_ingestion: artifacts/data_ingestion/data.zip download! with following info: 
+Date: Tue, 02 Jan 2024 16:50:12 GMT
+Content-Type: application/octet-stream
+Content-Length: 27926497
+Connection: close
+cache-control: max-age=60, public, must-revalidate, stale-while-revalidate=60, stale-if-error=300, s-maxage=60
+content-disposition: attachment
+content-security-policy: base-uri 'self'; child-src https://www.google.com/recaptcha/ https://www.recaptcha.net/ https://www.googletagmanager.com/ns.html https://*.zuora.com/apps/PublicHostedPageLite.do https://gitlab.com/admin/ https://gitlab.com/assets/ https://gitlab.com/-/speedscope/index.html https://gitlab.com/-/sandbox/ https://gitlab.com/assets/ blob: data:; connect-src 'self' https://gitlab.com wss://gitlab.com https://sentry.gitlab.net https://new-sentry.gitlab.net https://customers.gitlab.com https://snowplow.trx.gitlab.net https://sourcegraph.com https://collector.prd-278964.gl-product-analytics.com snowplow.trx.gitlab.net; default-src 'self'; font-src 'self'; form-action 'self' https: http:; frame-ancestors 'self'; frame-src https://www.google.com/recaptcha/ https://www.recaptcha.net/ https://www.googletagmanager.com/ns.html https://*.zuora.com/apps/PublicHostedPageLite.do https://gitlab.com/admin/ https://gitlab.com/assets/ https://gitlab.com/-/speedscope/index.html https://gitlab.com/-/sandbox/; img-src 'self' data: blob: http: https:; manifest-src 'self'; media-src 'self' data: blob: http: https:; object-src 'none'; report-uri https://new-sentry.gitlab.net/api/4/security/?sentry_key=f5573e26de8f4293b285e556c35dfd6e&sentry_environment=gprd; script-src 'strict-dynamic' 'self' 'unsafe-inline' 'unsafe-eval' https://www.google.com/recaptcha/ https://www.gstatic.com/recaptcha/ https://www.recaptcha.net/ https://apis.google.com https://*.zuora.com/apps/PublicHostedPageLite.do 'nonce-GRkWhXBmbBgkKvhudR0pBA=='; style-src 'self' 'unsafe-inline'; worker-src https://gitlab.com/assets/ blob: data:
+etag: "385be72b4b13034625639f2f4e097d15"
+permissions-policy: interest-cohort=()
+referrer-policy: strict-origin-when-cross-origin
+x-content-type-options: nosniff
+x-download-options: noopen
+x-frame-options: SAMEORIGIN
+x-gitlab-meta: {"correlation_id":"01HK5H924MM1CF2VXG9R5MG5HV","version":"1"}
+x-permitted-cross-domain-policies: none
+x-request-id: 01HK5H924MM1CF2VXG9R5MG5HV
+x-runtime: 0.100802
+x-ua-compatible: IE=edge
+x-xss-protection: 1; mode=block
+gitlab-lb: haproxy-main-46-lb-gprd
+gitlab-sv: web-gke-us-east1-c
+CF-Cache-Status: HIT
+Accept-Ranges: bytes
+Report-To: {"endpoints":[{"url":"https:\/\/a.nel.cloudflare.com\/report\/v3?s=zmkiiWr1FfNAckvrlJfN%2BgdZqIGaq2GGatE9WCeAzkazVDFxYu0vf0Tqw7obTnaIkwjX3GD34NODj3RpLoGd74SBWIppJ6MM%2Fw7bxMJcvgJO7p0lXuHfotj5TR4%3D"}],"group":"cf-nel","max_age":604800}
+NEL: {"success_fraction":0.01,"report_to":"cf-nel","max_age":604800}
+Vary: Accept-Encoding
+Strict-Transport-Security: max-age=31536000
+Set-Cookie: _cfuvid=Tr2YnPOdcjAf_jepTg9xJM5GSrvBze.6l5s3fOSZXW4-1704214212132-0-604800000; path=/; domain=.gitlab.com; HttpOnly; Secure; SameSite=None
+Server: cloudflare
+CF-RAY: 83f47fe5b8a4f2b2-BOM
+
+]
+[2024-01-02 22:20:20,797 : INFO: main: >>>>>> stage Data Ingestion stage completed <<<<<<<<
+
+x===========x]
+[2024-01-02 23:08:08,541 : INFO: main: >>>> stage Data Ingestion stage started <<<<<]
+[2024-01-02 23:08:08,542 : INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-01-02 23:08:08,543 : INFO: common: yaml file: params.yaml loaded successfully]
+[2024-01-02 23:08:08,543 : INFO: common: Created directory at: artifacts]
+[2024-01-02 23:08:08,543 : INFO: common: Created directory at: artifacts/data_ingestion]
+[2024-01-02 23:08:08,543 : INFO: data_ingestion: File already exists of size: ~ 27272KB]
+[2024-01-02 23:08:12,394 : INFO: main: >>>>>> stage Data Ingestion stage completed <<<<<<<<
+
+x===========x]
+[2024-01-02 23:08:12,394 : INFO: main: >>>> stage Data Validation stage started <<<<<]
+[2024-01-02 23:08:12,395 : INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-01-02 23:08:12,395 : INFO: common: yaml file: params.yaml loaded successfully]
+[2024-01-02 23:08:12,396 : INFO: common: Created directory at: artifacts]
+[2024-01-02 23:08:12,396 : INFO: common: Created directory at: artifacts/data_validation]
+[2024-01-02 23:08:12,396 : ERROR: main: [WinError 3] The system cannot find the path specified: 'artifacts\\data_ingestion\\samsum_dataset']
+Traceback (most recent call last):
+  File "C:\Users\srena\Downloads\Live\celebrity_match\main.py", line 23, in <module>
+    data_validation.main()
+  File "C:\Users\srena\Downloads\Live\celebrity_match\src\celebrity_match\pipeline\stage_02_data_validation.py", line 14, in main
+    data_validation.validate_all_files_exist()
+  File "C:\Users\srena\Downloads\Live\celebrity_match\src\celebrity_match\components\data_validation.py", line 29, in validate_all_files_exist
+    raise e
+  File "C:\Users\srena\Downloads\Live\celebrity_match\src\celebrity_match\components\data_validation.py", line 14, in validate_all_files_exist
+    all_files = os.listdir(os.path.join("artifacts", "data_ingestion", "samsum_dataset"))
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [WinError 3] The system cannot find the path specified: 'artifacts\\data_ingestion\\samsum_dataset'
+[2024-01-02 23:08:55,597 : INFO: main: >>>> stage Data Ingestion stage started <<<<<]
+[2024-01-02 23:08:55,598 : INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-01-02 23:08:55,599 : INFO: common: yaml file: params.yaml loaded successfully]
+[2024-01-02 23:08:55,599 : INFO: common: Created directory at: artifacts]
+[2024-01-02 23:08:55,599 : INFO: common: Created directory at: artifacts/data_ingestion]
+[2024-01-02 23:08:55,600 : INFO: data_ingestion: File already exists of size: ~ 27272KB]
+[2024-01-02 23:08:59,385 : INFO: main: >>>>>> stage Data Ingestion stage completed <<<<<<<<
+
+x===========x]
+[2024-01-02 23:08:59,385 : INFO: main: >>>> stage Data Validation stage started <<<<<]
+[2024-01-02 23:08:59,387 : INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-01-02 23:08:59,387 : INFO: common: yaml file: params.yaml loaded successfully]
+[2024-01-02 23:08:59,387 : INFO: common: Created directory at: artifacts]
+[2024-01-02 23:08:59,387 : INFO: common: Created directory at: artifacts/data_validation]
+[2024-01-02 23:08:59,416 : INFO: main: >>>>>> stage Data Validation stage completed <<<<<<<<
+
+x===========x]
